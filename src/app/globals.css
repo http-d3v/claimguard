@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FAF7FF;
+  --foreground: #2D2A32;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --border-color: rgba(255, 255, 255, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark {
+    --background: #1A1820;
+    --foreground: #EAE1FF;
+    --card-bg: rgba(30, 28, 40, 0.7);
+    --border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fredoka', sans-serif;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+.bg-mesh {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(circle at 15% 50%, rgba(179, 157, 255, 0.15), transparent 25%),
+              radial-gradient(circle at 85% 30%, rgba(160, 232, 175, 0.15), transparent 25%),
+              radial-gradient(circle at 50% 80%, rgba(255, 200, 162, 0.15), transparent 25%);
+}
+
+.dark .bg-mesh {
+  background: radial-gradient(circle at 15% 50%, rgba(122, 95, 255, 0.15), transparent 25%),
+              radial-gradient(circle at 85% 30%, rgba(118, 229, 177, 0.15), transparent 25%),
+              radial-gradient(circle at 50% 80%, rgba(255, 138, 138, 0.15), transparent 25%);
+}
